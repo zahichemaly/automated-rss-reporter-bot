@@ -20,25 +20,25 @@
     - Resource Group Name
 	- Login Server
 
- You can run the `deploy.sh `after modifiying the commands or follow the steps below:
+   You can run the `deploy.sh `after modifiying the commands or follow the steps below:
 
 5. Build the docker image:
 
- `docker build -t <mycontainer>.azurecr.io/worker:v0.1 .`
+   `docker build -t <mycontainer>.azurecr.io/worker:v0.1 .`
 
 6. Login to your Azure container registry
 
- ` docker login <mycontainer>.azurecr.io`
+   ` docker login <mycontainer>.azurecr.io`
 
 7. Push the docker image to your Azure container registry
 
- `docker push <mycontainer>.azurecr.io/worker:v0.1`
+   `docker push <mycontainer>.azurecr.io/worker:v0.1`
 
 8. Now you need to create an Automation Account (Search for *Automation Accounts > Add*). 
 
- To use the latest version of Azure CLI for operations with containers, we need to install specific modules. But first, we need to update the modules. Go to *RunBooks > Import a runbook* and select `Update-AutomationAzureModulesForAccount.ps1`. Save, Publish & run the script.
+   To use the latest version of Azure CLI for operations with containers, we need to install specific modules. But first, we need to update the modules. Go to *RunBooks > Import a runbook* and select `Update-AutomationAzureModulesForAccount.ps1`. Save, Publish & run the script.
 
- Once done, go to *Modules > Browse Gallery* and the modules **AzureRM.ContainerInstance** and **AzureRM.ContainerRegistry**.
+   Once done, go to *Modules > Browse Gallery* and the modules **AzureRM.ContainerInstance** and **AzureRM.ContainerRegistry**.
 
 9. Create another runbook which will create our container and run the python script. Import the `AutomationContainer.ps1` after updating the appropirate parameters, mainly the **Resource Group Name**, the **Container Registry Name** and **Image Name**.
 
