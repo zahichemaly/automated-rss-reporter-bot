@@ -1,0 +1,7 @@
+{
+    "bot_token": "TELEGRAM_BOT_TOKEN",
+    "channel_id": "TELEGRAM_CHANNEL_ID",
+    "feed_urls": [
+        "FEED_URL1"
+    ]
+}
