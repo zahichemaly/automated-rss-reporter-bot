@@ -10,6 +10,8 @@
 
 
 ### Configuration & setup
+- > python -m pip install requests
+
 1. Create a Telegram bot. For detailed instructions, check [here](https://core.telegram.org/bots#3-how-do-i-create-a-bot "here").
 
 2. Note the **bot token** and **channel ID**, and manually update them in the `config.json` file. Also put all your RSS feed links in that file. Note: this might require additional code changes in the `bot.py` file regarding the parsing of the feed file, since some formats differ from others.

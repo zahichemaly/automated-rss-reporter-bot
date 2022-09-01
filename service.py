@@ -15,11 +15,13 @@ def load_config():
         CHANNEL_ID = config['channel_id']
         FEED_URLS = config['feed_urls']
 
-def send_message(entry, source):
-    message = f"<b>{entry}</b> now available for download! Brought to you by {source}."
-    print(message)
+def get_message(entry, date):
+    message = f"• {entry}"
+    return message
+
+def send_message(message):
     requests.get(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage?chat_id={CHANNEL_ID}&text={message}&parse_mode=html")
 
 def send_message_test(entry, source):
-    message = f"<b>{entry}</b> now available for download! Brought to you by {source}."
+    message = get_message(entry, source)
     print(message)
